@@ -8,7 +8,14 @@ $(document).ready(function(){
     decoder : {
       readers : [
           'code_128_reader',
-          'ean_reader',
+          {
+            format: "ean_reader",
+            config: {
+                supplements: [
+                    'ean_5_reader', 'ean_2_reader','ean_13_reader'
+                ]
+            }
+            },
           'ean_8_reader'
         ]
     }
